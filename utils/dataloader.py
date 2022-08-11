@@ -233,8 +233,7 @@ class MSSDetDatasets(keras.utils.Sequence):
         assigned_anchors = self.anchors[assign_mask]
 
         #---------------------------------------------#
-        #   逆向编码，将真实框转化为
-        # 预测结果的格式
+        #   逆向编码，将真实框转化为MSSDet预测结果的格式
         #   先计算真实框的中心与长宽
         #---------------------------------------------#
         box_center  = 0.5 * (box[:2] + box[2:])

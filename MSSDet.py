@@ -18,9 +18,9 @@ class MSSDet(object):
     _defaults = {
 
         "model_path"        : 'model_data/MSSDet_weights.h5',
-        "classes_path"      : 'model_data/voc_classes.txt',
+        "classes_path"      : 'model_data/SA-HP.txt',
 
-        "input_shape"       : [300, 300],
+        "input_shape"       : [224, 224],
 
         "confidence"        : 0.5,
 

@@ -1,0 +1,12 @@
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/HP(17).jpg 861,89,985,240,1 1029,374,1125,481,1 463,676,618,749,1
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/HP(32).jpg 342,260,905,616,1
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/HP(55).jpg 418,764,559,855,1
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/HP(63).jpg 540,689,664,789,1
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(11).jpg 401,267,739,611,0
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(15).jpg 600,426,904,696,0
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(28).jpg 494,396,760,570,0
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(3).jpg 251,367,540,708,0
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(33).jpg 289,231,716,804,0
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(53).jpg 313,200,450,375,0
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(55).jpg 207,227,313,376,0
+F:\BaiduNetdiskDownload\MSSDetection\VOCdevkit/SA-HP/JPEGImages/SA(69).jpg 230,192,334,308,0

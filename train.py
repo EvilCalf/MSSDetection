@@ -73,7 +73,7 @@ if __name__ == "__main__":
     Freeze_Epoch = 50
     Freeze_batch_size = 16
 
-    UnFreeze_Epoch = 100
+    UnFreeze_Epoch = 1000 # epoch
     Unfreeze_batch_size = 8
 
     Freeze_Train = False
@@ -95,8 +95,8 @@ if __name__ == "__main__":
     num_workers = 1
 
 
-    train_annotation_path = 'VOCdevkit/VOC2007/ImageSets/train.txt'
-    val_annotation_path = 'VOCdevkit/VOC2007/ImageSets/val.txt'
+    train_annotation_path   = 'train/SA-HP_train.txt'
+    val_annotation_path     = 'train/SA-HP_val.txt'
 
 
     class_names, num_classes = get_classes(classes_path)
@@ -113,14 +113,9 @@ if __name__ == "__main__":
     with open(train_annotation_path, encoding='utf-8') as f:
         train_lines = f.readlines()
     with open(val_annotation_path, encoding='utf-8') as f:
-        val_lines = f.readlines()
-    num_train = len(train_lines)
-    num_val = len(val_lines)
-
-    for i in range(num_train):
-        train_lines[i] = "VOCdevkit/VOC2007/JPEGImages/" + train_lines[i].replace("\n", "") + ".jpg"
-    for i in range(num_val):
-        val_lines[i] = "VOCdevkit/VOC2007/JPEGImages/" + val_lines[i].replace("\n", "") + ".jpg"
+        val_lines   = f.readlines()
+    num_train   = len(train_lines)
+    num_val     = len(val_lines)
 
     for layer in model.layers:
         if isinstance(layer, DepthwiseConv2D):
