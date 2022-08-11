@@ -2,7 +2,7 @@ import keras.backend as K
 import numpy as np
 from keras.layers import InputSpec, Layer
 from keras.layers import (Activation, Concatenate, Conv2D, Flatten, Input,
-                          Reshape, Add, AveragePooling2D)
+                          Reshape, Add, AveragePooling2D,concatenate)
 from keras.models import Model
 
 from nets.detnet import detnet_59
