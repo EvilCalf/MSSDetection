@@ -7,7 +7,6 @@ Medical_Datasets/
 lfw/
 logs/
 model_data/
-requirements.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
