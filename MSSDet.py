@@ -26,7 +26,7 @@ class MSSDet(object):
 
         "nms_iou"           : 0.45,
 
-        'anchors_size'      : [30, 60, 111, 162, 213, 264, 315],
+        'anchors_size'      : [22.4, 44.8, 82.88, 120.96, 159.04, 197.12,235.2],
 
         "letterbox_image"   : False,
     }

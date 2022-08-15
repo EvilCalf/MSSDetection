@@ -25,55 +25,13 @@ if __name__ == "__main__":
 
     input_shape = [224, 224]
 
-    #------------------------------------------------------#
     anchors_size = [22.4, 44.8, 82.88, 120.96, 159.04, 197.12,235.2]
 
-    #----------------------------------------------------------------------------------------------------------------------------#
-    #   训练分为两个阶段，分别是冻结阶段和解冻阶段。
-    #  
-    #
-    # 
-    #   （一）从整个模型的预训练权重开始训练：
-    #       Adam：
-    #           Init_Epoch = 0，Freeze_Epoch = 50，UnFreeze_Epoch = 100，Freeze_Train = True，optimizer_type = 'adam'，Init_lr = 6e-4，weight_decay = 0。（冻结）
-    #           Init_Epoch = 0，UnFreeze_Epoch = 100，Freeze_Train = False，optimizer_type = 'adam'，Init_lr = 6e-4，weight_decay = 0。（不冻结）
-    #       SGD：
-    #           Init_Epoch = 0，Freeze_Epoch = 50，UnFreeze_Epoch = 100，Freeze_Train = True，optimizer_type = 'sgd'，Init_lr = 2e-3，weight_decay = 5e-4。（冻结）
-    #           Init_Epoch = 0，UnFreeze_Epoch = 100，Freeze_Train = False，optimizer_type = 'sgd'，Init_lr = 2e-3，weight_decay = 5e-4。（不冻结）
-    #       其中：UnFreeze_Epoch可以在100-300之间调整。
-    #   （二）从主干网络的预训练权重开始训练：
-    #       Adam：
-    #           Init_Epoch = 0，Freeze_Epoch = 50，UnFreeze_Epoch = 100，Freeze_Train = True，optimizer_type = 'adam'，Init_lr = 6e-4，weight_decay = 0。（冻结）
-    #           Init_Epoch = 0，UnFreeze_Epoch = 100，Freeze_Train = False，optimizer_type = 'adam'，Init_lr = 6e-4，weight_decay = 0。（不冻结）
-    #       SGD：
-    #           Init_Epoch = 0，Freeze_Epoch = 50，UnFreeze_Epoch = 200，Freeze_Train = True，optimizer_type = 'sgd'，Init_lr = 2e-3，weight_decay = 5e-4。（冻结）
-    #           Init_Epoch = 0，UnFreeze_Epoch = 200，Freeze_Train = False，optimizer_type = 'sgd'，Init_lr = 2e-3，weight_decay = 5e-4。（不冻结）
-    #       其中：由于从主干网络的预训练权重开始训练，主干的权值不一定适合目标检测，需要更多的训练跳出局部最优解。
-    #             UnFreeze_Epoch可以在200-300之间调整，YOLOV5和YOLOX均推荐使用300。
-    #             Adam相较于SGD收敛的快一些。因此UnFreeze_Epoch理论上可以小一点，但依然推荐更多的Epoch。
-    #   （三）batch_size的设置：
-    #       在显卡能够接受的范围内，以大为好。显存不足与数据集大小无关，提示显存不足（OOM或者CUDA out of memory）请调小batch_size。
-    #       受到BatchNorm层影响，batch_size最小为2，不能为1。
-    #       正常情况下Freeze_batch_size建议为Unfreeze_batch_size的1-2倍。不建议设置的差距过大，因为关系到学习率的自动调整。
-    #----------------------------------------------------------------------------------------------------------------------------#
-    #------------------------------------------------------------------#
-    #   冻结阶段训练参数
-    #   此时模型的主干被冻结了，特征提取网络不发生改变
-    #   占用的显存较小，仅对网络进行微调
-    #   Init_Epoch          模型当前开始的训练世代，其值可以大于Freeze_Epoch，如设置：
-    #                       Init_Epoch = 60、Freeze_Epoch = 50、UnFreeze_Epoch = 100
-    #                       会跳过冻结阶段，直接从60代开始，并调整对应的学习率。
-    #                       （断点续练时使用）
-    #   Freeze_Epoch        模型冻结训练的Freeze_Epoch
-    #                       (当Freeze_Train=False时失效)
-    #   Freeze_batch_size   模型冻结训练的batch_size
-    #                       (当Freeze_Train=False时失效)
-    #------------------------------------------------------------------#
     Init_Epoch = 0
     Freeze_Epoch = 50
     Freeze_batch_size = 16
 
-    UnFreeze_Epoch = 1000 # epoch
+    UnFreeze_Epoch = 2000 # epoch
     Unfreeze_batch_size = 8
 
     Freeze_Train = False
