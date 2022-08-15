@@ -8,4 +8,4 @@ if __name__ == "__main__":
 
     model = MSSDet_model(input_shape, num_classes)
     model.summary()
-    plot_model(model,to_file='lstm_test_model.png',show_shapes=True)
+    plot_model(model,to_file='model.png',show_shapes=True)
