@@ -9,8 +9,8 @@ from utils.utils import get_classes
 annotation_mode     = 0
 classes_path        = 'model_data/SA-HP.txt'
 
-trainval_percent    = 0.9
-train_percent       = 0.9
+trainval_percent    = 0.8
+train_percent       = 0.8
 
 VOCdevkit_path  = 'VOCdevkit'
 
