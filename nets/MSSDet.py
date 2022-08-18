@@ -147,12 +147,12 @@ def MSSDet_model(input_shape=(224, 224, 3), num_classes=21):
                                                               net['dires6_mbox_conf_flat']])
     # 8732,4
     net['mbox_loc'] = Reshape((-1, 4), name='mbox_loc_final')(net['mbox_loc'])
-    # 8732,21
+    # 8732,2
     net['mbox_conf'] = Reshape(
         (-1, num_classes), name='mbox_conf_logits')(net['mbox_conf'])
     net['mbox_conf'] = Activation(
         'softmax', name='mbox_conf_final')(net['mbox_conf'])
-    # 8732,25
+    # 8732,6
     net['predictions'] = Concatenate(
         axis=-1, name='predictions')([net['mbox_loc'], net['mbox_conf']])
 
